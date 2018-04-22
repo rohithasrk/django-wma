@@ -10,6 +10,8 @@ class AbstractContainer(models.Model):
 
     class Meta:
         abstract = True
+        verbose_name = _('Container')
+        verbose_name_plural = _('Containers')
 
 
 class AbstractWaterQuantity(models.Model):
@@ -20,6 +22,8 @@ class AbstractWaterQuantity(models.Model):
 
     class Meta:
         abstract = True
+        verbose_name = _('Water Quantity')
+        verbose_name_plural = _('Water Quantity')
 
 
 class AbstractWaterQuality(models.Model):
@@ -46,54 +50,56 @@ class AbstractWaterQuality(models.Model):
     """
     Dissolved ion concentrations in mg/l
     """
-    fluoride = models.DecimalField(help_text=_('Fluoride ion concentration'),
+    fluoride = models.DecimalField(help_text=_('Fluoride ion concentration in mg/l'),
                                    max_digits=20,
                                    decimal_places=10)
-    calcium = models.DecimalField(help_text=_('Calcium ion concentration'),
+    calcium = models.DecimalField(help_text=_('Calcium ion concentration in mg/l'),
                                   max_digits=20,
                                   decimal_places=10)
-    nitrate = models.DecimalField(help_text=_('Nitrate ion concentration'),
+    nitrate = models.DecimalField(help_text=_('Nitrate ion concentration in mg/l'),
                                   max_digits=20,
                                   decimal_places=10)
-    chloride = models.DecimalField(help_text=_('Chloride ion concentration'),
+    chloride = models.DecimalField(help_text=_('Chloride ion concentration in mg/l'),
                                    max_digits=20,
                                    decimal_places=10)
-    iodide = models.DecimalField(help_text=_('Iodide ion concentration'),
+    iodide = models.DecimalField(help_text=_('Iodide ion concentration in mg/l'),
                                  max_digits=20,
                                  decimal_places=10)
-    cupric = models.DecimalField(help_text=_('Cupric ion concentration'),
+    cupric = models.DecimalField(help_text=_('Cupric ion concentration in mg/l'),
                                  max_digits=20,
                                  decimal_places=10)
-    bromide = models.DecimalField(help_text=_('Bromide ion concentration'),
+    bromide = models.DecimalField(help_text=_('Bromide ion concentration in mg/l'),
                                   max_digits=20,
                                   decimal_places=10)
-    silver = models.DecimalField(help_text=_('Silver ion concentration'),
+    silver = models.DecimalField(help_text=_('Silver ion concentration in mg/l'),
                                  max_digits=20,
                                  decimal_places=10)
-    fluoroborate = models.DecimalField(help_text=_('Fluoroborate ion concentration'),
+    fluoroborate = models.DecimalField(help_text=_('Fluoroborate ion concentration in mg/l'),
                                        max_digits=20,
                                        decimal_places=10)
-    ammonium = models.DecimalField(help_text=_('Ammonium ion concentration'),
+    ammonium = models.DecimalField(help_text=_('Ammonium ion concentration in mg/l'),
                                    max_digits=20,
                                    decimal_places=10)
-    lithium = models.DecimalField(help_text=_('Lithium ion concentration'),
+    lithium = models.DecimalField(help_text=_('Lithium ion concentration in mg/l'),
                                   max_digits=20,
                                   decimal_places=10)
-    magnesium = models.DecimalField(help_text=_('Magnesium ion concentration'),
+    magnesium = models.DecimalField(help_text=_('Magnesium ion concentration in mg/l'),
                                     max_digits=20,
                                     decimal_places=10)
-    nitrite = models.DecimalField(help_text=_('Nitrite ion concentration'),
+    nitrite = models.DecimalField(help_text=_('Nitrite ion concentration in mg/l'),
                                   max_digits=20,
                                   decimal_places=10)
-    perchlorate = models.DecimalField(help_text=_('Perchlorate ion concentration'),
+    perchlorate = models.DecimalField(help_text=_('Perchlorate ion concentration in mg/l'),
                                       max_digits=20,
                                       decimal_places=10)
-    potassium = models.DecimalField(help_text=_('Potassium ion concentration'),
+    potassium = models.DecimalField(help_text=_('Potassium ion concentration in mg/l'),
                                     max_digits=20,
                                     decimal_places=10)
-    sodium = models.DecimalField(help_text=_('Sodium ion concentration'),
+    sodium = models.DecimalField(help_text=_('Sodium ion concentration in mg/l'),
                                  max_digits=20,
                                  decimal_places=10)
 
     class Meta:
         abstract = True
+        verbose_name = _('Water Quality')
+        verbose_name_plural = _('Water Quality')
