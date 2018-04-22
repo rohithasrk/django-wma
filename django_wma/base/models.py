@@ -5,8 +5,8 @@ import swapper
 
 class AbstractContainer(models.Model):
     name = models.CharField(help_text=_('Container name'), max_length=30)
-    volume = models.BigIntegerField(help_text=_('Volume of the container in cubic metres'))
-    base_area = models.BigIntegerField(help_text=_('Base area of the container in square metres'))
+    volume = models.BigIntegerField(help_text=_('Volume of the container in cubic metres.'))
+    base_area = models.BigIntegerField(help_text=_('Base area of the container in square metres.'))
 
     class Meta:
         abstract = True
