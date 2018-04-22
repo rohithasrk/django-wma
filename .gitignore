@@ -103,3 +103,6 @@ ENV/
 # db files
 *.sqlite3
 *.db
+
+# py charm files
+.idea
