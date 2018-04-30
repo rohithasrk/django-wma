@@ -1,0 +1,29 @@
+{% extends 'wma/base.html' %}
+{% block title %}{{ container.name }}{% endblock %}
+{% block body %}
+    <h1 align="center">{{ container.name }} Water Resource</h1>
+    Temperature: {{ water_quality.temperature }} Kelvin <br>
+    pH: {{ water_quality.ph }} <br>
+    Dissolved Oxygen: {{ water_quality.do }} <br>
+    Oxidation Reduction Potential: {{ water_quality.orp }} <br>
+    Conductivity: {{ water_quality.conductivity }} <br>
+    <div class="graph" id="ions"></div>
+    <div class="graph" id="do"></div>
+    <div class="graph" id="orp"></div>
+    <div class="graph" id="turbidity"></div>
+
+    <script>
+        var ion_data = [{
+            x: ['Fluoride', 'Calcium', 'Nitrate', 'Chloride', 'Iodide', 'Cupric', 'Bromide', 'Silver', 'Fluoroborate',
+                'Ammonium', 'Lithium', 'Magnesium', 'Nitrite', 'Perchlorate', 'Potassium', 'Sodium'],
+            y: [{{ water_quality.fluoride }}, {{ water_quality.calcium }}, {{ water_quality.nitrate }},
+                {{ water_quality.chloride }}, {{ water_quality.iodide }}, {{ water_quality.cupric }},
+                {{ water_quality.bromide }}, {{ water_quality.silver }}, {{ water_quality.fluoroborate }},
+                {{ water_quality.ammonium }}, {{ water_quality.lithium }}, {{ water_quality.magnesium }},
+                {{ water_quality.nitrite }}, {{ water_quality.perchlorate }}, {{ water_quality.potassium }},
+                {{ water_quality.sodium }}],
+            type: 'bar'
+        }];
+        Plotly.newPlot('ions', ion_data);
+    </script>
+{% endblock %}

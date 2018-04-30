@@ -1,0 +1,15 @@
+<!DOCTYPE html>{% load static %}
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <script src = "{% static 'wma/lib/plotly.js' %}"></script>
+    {% block style %}
+    {% endblock %}
+</head>
+<body class="frontend">
+    {% block body %}{% endblock %}
+    {% block script %}
+    {% endblock %}
+</body>
+</html>

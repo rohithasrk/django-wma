@@ -1,0 +1,12 @@
+{% extends 'wma/base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Water Resource list' %}{% endblock %}
+{% block body %}
+    <ul id="menu">
+        {% for container in containers %}
+            <li>
+                <a href="{% url 'container_detail' container.id %}">{{ container.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
