@@ -8,6 +8,9 @@ class AbstractContainer(models.Model):
     volume = models.BigIntegerField(help_text=_('Volume of the container in cubic metres.'))
     base_area = models.BigIntegerField(help_text=_('Base area of the container in square metres.'))
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         abstract = True
         verbose_name = _('Container')
@@ -19,6 +22,9 @@ class AbstractWaterQuantity(models.Model):
                                   on_delete=models.CASCADE)
     volume = models.BigIntegerField(help_text=_('Volume of django_wma available in cubic metres'))
     height = models.BigIntegerField(help_text=_('Height of django_wma level in metres'))
+
+    def __str__(self):
+        return "{}'s quantity".format(str(self.container.name))
 
     class Meta:
         abstract = True
@@ -98,6 +104,9 @@ class AbstractWaterQuality(models.Model):
     sodium = models.DecimalField(help_text=_('Sodium ion concentration in mg/l'),
                                  max_digits=20,
                                  decimal_places=10)
+
+    def __str__(self):
+        return "{}'s quality".format(str(self.container))
 
     class Meta:
         abstract = True
